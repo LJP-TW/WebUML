@@ -1,0 +1,27 @@
+.pika {
+    background-image: url('../images/other/pika.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.icon_128 {
+    background-image: url('../images/other/icon_128.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.navigate_plus{
+    background-image: url('../images/navigate_plus.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.navigate_minus {
+    background-image: url('../images/navigate_minus.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
