@@ -6,6 +6,8 @@ import Toolbar from '../Components/Toolbar';
 import AttributeEditor from '../Components/AttributeEditor';
 import '../Css/Main.css'
 import '../Css/Images.css'
+import '../Css/common.css'
+import '../Css/explorer.css'
 
 export default class Layout extends React.Component {
     render() {

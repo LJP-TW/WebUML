@@ -10,6 +10,7 @@ import setDraggable from "./setDraggable"
 import setAnchors from "./setAnchors"
 import setClipboard from "./setClipboard"
 import setZoomButtons from "./setZoomButtons"
+import AttributeEditor from "./AttributeEditor";
 
 class App extends React.Component {
 	constructor(props) {
