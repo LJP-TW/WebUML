@@ -1,5 +1,4 @@
-import { mxConstants, 
-    mxEdgeStyle } from "mxgraph-js";
+import { mxConstants } from "mxgraph-js";
 
 export default function setStylesheet(graph) {
     const setRectangle = function () {
@@ -40,11 +39,6 @@ export default function setStylesheet(graph) {
         graph.getStylesheet().putCellStyle('bus', style);
     }
 
-    const setArrow = function () {
-	    var style = [];
-        graph.getStylesheet().putCellStyle('arrow', style);
-    }
-
     const setText = function () {
 	    var style = [];
         style[mxConstants.STYLE_SHAPE] = mxConstants.SHAPE_RECTANGLE;
@@ -59,12 +53,56 @@ export default function setStylesheet(graph) {
         graph.getStylesheet().putCellStyle('actor', style);
     }
 
+    const setEdgeDefault = function () {
+        var defaultEdgeStyle = graph.getStylesheet().getDefaultEdgeStyle();
+        defaultEdgeStyle[mxConstants.STYLE_EDGE] = mxConstants.EDGESTYLE_ELBOW;
+    }
+
+    const setArrow = function () {
+        var style = [];
+        graph.getStylesheet().putCellStyle('arrow', style);
+    }
+
+    const setDashedArrow = function () {
+        var style = [];
+        style[mxConstants.STYLE_DASHED] = 1;
+        style[mxConstants.STYLE_ENDARROW] = mxConstants.ARROW_OPEN;
+        graph.getStylesheet().putCellStyle('dashedArrow', style);
+    }
+
+    const setImplementArrow = function () {
+        var style = [];
+        style[mxConstants.STYLE_DASHED] = 1;
+        style[mxConstants.STYLE_ENDARROW] = mxConstants.ARROW_BLOCK;
+        graph.getStylesheet().putCellStyle('implementArrow', style);
+    }
+
+    const setGeneralizationArrow = function () {
+        var style = [];
+        style[mxConstants.STYLE_ENDARROW] = mxConstants.ARROW_BLOCK;
+        graph.getStylesheet().putCellStyle('generalizationArrow', style);
+    }
+
+    const setAggregationArrow = function () {
+        var style = [];
+        style[mxConstants.STYLE_ENDARROW] = mxConstants.ARROW_DIAMOND;
+        graph.getStylesheet().putCellStyle('aggregationArrow', style);
+    }
+
+    // Verteice
     setRectangle();
     setIf();
     setBegin();
     setEnd();
     setBus();
-    setArrow();
     setText();
     setActor();
+
+    // Edges
+    setEdgeDefault();
+    setArrow();
+    setDashedArrow();
+    setImplementArrow();
+    setGeneralizationArrow();
+    setAggregationArrow();
 }

@@ -43,6 +43,22 @@ export default function setToolbar(graph) {
 		createEdge('arrow', 100, "");
 	})
 
+	addButton("dashedArrow", function() {
+		createEdge('dashedArrow', 100, "");
+	})
+
+	addButton("implementArrow", function() {
+		createEdge('implementArrow', 100, "");
+	})
+
+	addButton("generalizationArrow", function() {
+		createEdge('generalizationArrow', 100, "");
+	})
+
+	addButton("aggregationArrow", function() {
+		createEdge('aggregationArrow', 100, "");
+	})
+
 	const sideToolbar = document.getElementById("toolbar");
 	sideToolbar.appendChild(buttons);
 }

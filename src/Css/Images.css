@@ -54,6 +54,34 @@
     background-position: center center;
 }
 
+.dashedArrow {
+    background-image: url('../images/other/dashedArrow.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.implementArrow {
+    background-image: url('../images/other/implementArrow.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.generalizationArrow {
+    background-image: url('../images/other/generalizationArrow.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.aggregationArrow {
+    background-image: url('../images/other/aggregationArrow.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 .bus {
     background-image: url('../images/other/bus.png');
     background-size: cover;
