@@ -56,6 +56,7 @@ export default function setStylesheet(graph) {
     const setEdgeDefault = function () {
         var defaultEdgeStyle = graph.getStylesheet().getDefaultEdgeStyle();
         defaultEdgeStyle[mxConstants.STYLE_EDGE] = mxConstants.EDGESTYLE_ELBOW;
+        defaultEdgeStyle[mxConstants.STYLE_ENDARROW] = mxConstants.ARROW_BLOCK;
     }
 
     const setArrow = function () {
@@ -74,18 +75,21 @@ export default function setStylesheet(graph) {
         var style = [];
         style[mxConstants.STYLE_DASHED] = 1;
         style[mxConstants.STYLE_ENDARROW] = mxConstants.ARROW_BLOCK;
+        style[mxConstants.STYLE_ENDFILL] = 0;
         graph.getStylesheet().putCellStyle('implementArrow', style);
     }
 
     const setGeneralizationArrow = function () {
         var style = [];
         style[mxConstants.STYLE_ENDARROW] = mxConstants.ARROW_BLOCK;
+        style[mxConstants.STYLE_ENDFILL] = 0;
         graph.getStylesheet().putCellStyle('generalizationArrow', style);
     }
 
     const setAggregationArrow = function () {
         var style = [];
         style[mxConstants.STYLE_ENDARROW] = mxConstants.ARROW_DIAMOND;
+        style[mxConstants.STYLE_ENDFILL] = 0;
         graph.getStylesheet().putCellStyle('aggregationArrow', style);
     }
 
