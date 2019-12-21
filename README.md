@@ -14,7 +14,7 @@ npm start
 ## Todo
 - [x] 刪除物件
 - [ ] 複製、剪下、貼上物件
-- [ ] UML 各種線條 Objects
+- [x] UML 各種線條 Objects
 - [ ] UML Class Object
 - [ ] Attribute Editor
 - [ ] 儲存為圖檔
