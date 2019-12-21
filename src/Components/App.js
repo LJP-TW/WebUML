@@ -5,12 +5,13 @@ import { mxClient,
 	mxEvent, 
 	mxGraph, 
 	mxRubberband,
-	mxShape } from "mxgraph-js";
+	mxShape
+} from "mxgraph-js";
 import setDraggable from "./setDraggable"
 import setAnchors from "./setAnchors"
 import setClipboard from "./setClipboard"
 import setZoomButtons from "./setZoomButtons"
-import AttributeEditor from "./AttributeEditor";
+import setStylesheet from "./setStylesheet"
 
 class App extends React.Component {
 	constructor(props) {
@@ -47,6 +48,9 @@ class App extends React.Component {
 			// 設定刪除事件
 			// setDeleteEvent();
 
+			// 設定 mxStylesheet
+			setStylesheet(graph);
+
 			// 設定 UML Object 可拉進 graph
 			setDraggable(graph);
 
@@ -55,7 +59,8 @@ class App extends React.Component {
 			setAnchors(mxGraph, mxShape);
 
 			// 設定剪貼簿
-			setClipboard(graph);
+			// 尚有 bug 無法使用
+			// setClipboard(graph);
 
 			// 設定縮放按鈕
 			setZoomButtons(graph);

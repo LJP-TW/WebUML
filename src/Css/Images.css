@@ -12,6 +12,48 @@
     background-position: center center;
 }
 
+.actor {
+    background-image: url('../images/other/actor.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.rectangle {
+    background-image: url('../images/other/rectangle.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.if {
+    background-image: url('../images/other/if.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.begin {
+    background-image: url('../images/other/begin.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.end {
+    background-image: url('../images/other/end.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.bus {
+    background-image: url('../images/other/bus.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 .navigate_plus{
     background-image: url('../images/navigate_plus.png');
     background-size: cover;
