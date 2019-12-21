@@ -7,15 +7,18 @@ import { mxClient,
 	mxRubberband,
 	mxShape
 } from "mxgraph-js";
+
+import setDeleteEvent from "./setDeleteEvent"
+import setStylesheet from "./setStylesheet"
 import setDraggable from "./setDraggable"
 import setAnchors from "./setAnchors"
 import setClipboard from "./setClipboard"
 import setZoomButtons from "./setZoomButtons"
-import setStylesheet from "./setStylesheet"
 
 class App extends React.Component {
 	constructor(props) {
 		super(props);
+
 		// 不知道發生什麼事情, 但有問題就註解回來看看ㄏ
 		// this.LoadGraph = this.LoadGraph.bind(this);
 	}
@@ -46,7 +49,7 @@ class App extends React.Component {
 			new mxRubberband(graph);
 
 			// 設定刪除事件
-			// setDeleteEvent();
+			setDeleteEvent(graph);
 
 			// 設定 mxStylesheet
 			setStylesheet(graph);
@@ -64,6 +67,7 @@ class App extends React.Component {
 
 			// 設定縮放按鈕
 			setZoomButtons(graph);
+
 		}
 	}
 
