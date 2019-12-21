@@ -10,10 +10,10 @@ import { mxClient,
 
 import setDeleteEvent from "./setDeleteEvent"
 import setStylesheet from "./setStylesheet"
-import setDraggable from "./setDraggable"
+import setUMLObjs from "./setUMLObjs"
 import setAnchors from "./setAnchors"
 import setClipboard from "./setClipboard"
-import setZoomButtons from "./setZoomButtons"
+import setToolbar from "./setToolbar"
 
 class App extends React.Component {
 	constructor(props) {
@@ -55,7 +55,7 @@ class App extends React.Component {
 			setStylesheet(graph);
 
 			// 設定 UML Object 可拉進 graph
-			setDraggable(graph);
+			setUMLObjs(graph);
 
 			// 設定錨點
 			// Overridden to define per-shape connection points
@@ -65,8 +65,8 @@ class App extends React.Component {
 			// 尚有 bug 無法使用
 			// setClipboard(graph);
 
-			// 設定縮放按鈕
-			setZoomButtons(graph);
+			// 設定工具列
+			setToolbar(graph);
 
 		}
 	}

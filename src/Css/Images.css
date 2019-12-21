@@ -47,8 +47,22 @@
     background-position: center center;
 }
 
+.arrow {
+    background-image: url('../images/other/arrow.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 .bus {
     background-image: url('../images/other/bus.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.text {
+    background-image: url('../images/other/text.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

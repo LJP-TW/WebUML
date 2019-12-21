@@ -4,8 +4,8 @@ import { mxUtils,
 	mxGeometry, 
 	mxDragSource } from "mxgraph-js";
 
-export default function Draggable(graph) {
-	const setItem = function(umlObjImgClass, width, height, text) {
+export default function setUMLObjs(graph) {
+	const setObj = function(umlObjImgClass, width, height, text) {
 		// 判斷 Drop 是否有效
 		const dropGraph = function(evt) {
 			const x = mxEvent.getClientX(evt);
@@ -29,7 +29,7 @@ export default function Draggable(graph) {
 		li.appendChild(img);
 		objectLists.appendChild(li);
 
-		// Drop 成功後新建一個 node
+		// Drop 成功後新建一個 vertex
 		const dropSuccessCb = function(graph, evt, target, x, y) {
 			const cell = new mxCell(text, new mxGeometry(0, 0, width, height), umlObjImgClass);
 			cell.vertex = true;
@@ -50,10 +50,11 @@ export default function Draggable(graph) {
 		ds.createDragElement = mxDragSource.prototype.createDragElement;
 	}
 
-	setItem('rectangle', 120, 80, "");
-	setItem('if', 40, 40, "");
-	setItem('begin', 30, 30, "");
-	setItem('end', 30, 30, "");
-	setItem('bus', 100, 1, "");
-	setItem('actor', 80, 100, "Actor");
+	setObj('text', 50, 30, "Text");
+	setObj('rectangle', 120, 80, "");
+	setObj('if', 40, 40, "");
+	setObj('begin', 30, 30, "");
+	setObj('end', 30, 30, "");
+	setObj('bus', 100, 1, "");
+	setObj('actor', 80, 100, "Actor");
 }

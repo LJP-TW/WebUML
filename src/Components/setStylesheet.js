@@ -1,6 +1,7 @@
-import { mxConstants } from "mxgraph-js";
+import { mxConstants, 
+    mxEdgeStyle } from "mxgraph-js";
 
-export default function Stylesheet(graph) {
+export default function setStylesheet(graph) {
     const setRectangle = function () {
 	    var style = [];
         style[mxConstants.STYLE_SHAPE] = mxConstants.SHAPE_RECTANGLE;
@@ -33,10 +34,22 @@ export default function Stylesheet(graph) {
 
     const setBus = function () {
 	    var style = [];
-        style[mxConstants.STYLE_SHAPE] = mxConstants.SHAPE_LINE;
+        style[mxConstants.STYLE_ENDARROW] = null;
         style[mxConstants.STYLE_STROKECOLOR] = '#000000';
-        style[mxConstants.STYLE_STROKEWIDTH] = 2;
+        style[mxConstants.STYLE_STROKEWIDTH] = 3;
         graph.getStylesheet().putCellStyle('bus', style);
+    }
+
+    const setArrow = function () {
+	    var style = [];
+        graph.getStylesheet().putCellStyle('arrow', style);
+    }
+
+    const setText = function () {
+	    var style = [];
+        style[mxConstants.STYLE_SHAPE] = mxConstants.SHAPE_RECTANGLE;
+        style[mxConstants.STYLE_OPACITY] = 1;
+        graph.getStylesheet().putCellStyle('text', style);
     }
 
     const setActor = function () {
@@ -51,5 +64,7 @@ export default function Stylesheet(graph) {
     setBegin();
     setEnd();
     setBus();
+    setArrow();
+    setText();
     setActor();
 }
