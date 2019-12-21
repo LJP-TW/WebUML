@@ -12,13 +12,13 @@ npm start
 ```
 
 ## Todo
-- [] 刪除物件
-- [] 複製、剪下、貼上物件
-- [] UML 各種線條 Objects
-- [] UML Class Object
-- [] Attribute Editor
-- [] 儲存為圖檔
-- [] 介面美化
+- [ ] 刪除物件
+- [ ] 複製、剪下、貼上物件
+- [ ] UML 各種線條 Objects
+- [ ] UML Class Object
+- [ ] Attribute Editor
+- [ ] 儲存為圖檔
+- [ ] 介面美化
 
 
 
