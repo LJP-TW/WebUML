@@ -5,6 +5,8 @@ export default function setStylesheet(graph) {
 	    var style = [];
         style[mxConstants.STYLE_SHAPE] = mxConstants.SHAPE_RECTANGLE;
         style[mxConstants.STYLE_FILLCOLOR] = '#FFFFFF';
+        style[mxConstants.STYLE_FONTCOLOR] = '#000000';
+        style[mxConstants.STYLE_FONTSIZE] = 12;
         graph.getStylesheet().putCellStyle('rectangle', style);
     }
 
@@ -12,6 +14,8 @@ export default function setStylesheet(graph) {
 	    var style = [];
         style[mxConstants.STYLE_SHAPE] = mxConstants.SHAPE_RHOMBUS;
         style[mxConstants.STYLE_FILLCOLOR] = '#FFFFFF';
+        style[mxConstants.STYLE_FONTCOLOR] = '#000000';
+        style[mxConstants.STYLE_FONTSIZE] = 12;
         graph.getStylesheet().putCellStyle('if', style);
     }
 
@@ -42,7 +46,9 @@ export default function setStylesheet(graph) {
     const setText = function () {
 	    var style = [];
         style[mxConstants.STYLE_SHAPE] = mxConstants.SHAPE_RECTANGLE;
-        style[mxConstants.STYLE_OPACITY] = 1;
+        style[mxConstants.STYLE_OPACITY] = 0;
+        style[mxConstants.STYLE_FONTCOLOR] = '#000000';
+        style[mxConstants.STYLE_FONTSIZE] = 12;
         graph.getStylesheet().putCellStyle('text', style);
     }
 
@@ -50,6 +56,8 @@ export default function setStylesheet(graph) {
 	    var style = [];
         style[mxConstants.STYLE_SHAPE] = mxConstants.SHAPE_ACTOR;
         style[mxConstants.STYLE_FILLCOLOR] = '#FFFFFF';
+        style[mxConstants.STYLE_FONTCOLOR] = '#000000';
+        style[mxConstants.STYLE_FONTSIZE] = 12;
         graph.getStylesheet().putCellStyle('actor', style);
     }
 

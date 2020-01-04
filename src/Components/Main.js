@@ -22,7 +22,7 @@ import '../Css/Images.css'
 import '../Css/common.css'
 import '../Css/explorer.css'
 
-export default function Main() {
+export default function Main(props) {
     // mxGraph object
     const [graph, setGraph] = useState(null);
     const [callFooter, setCallFooter] = useState(null);

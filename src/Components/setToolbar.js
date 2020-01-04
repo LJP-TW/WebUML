@@ -16,7 +16,12 @@ export default function setToolbar(graph, setBtns) {
 	const createEdge = function(style, length, text) {
 		var x = 50;
 		var y = 50;
-		const cell = new mxCell(text, new mxGeometry(0, 0, 0, 0), style);
+
+		var value = {};
+		value['text'] = text;
+		value['UMLtype'] = 'arrow';
+
+		const cell = new mxCell(value, new mxGeometry(0, 0, 0, 0), style);
 		cell.geometry.setTerminalPoint(new mxPoint(x, y), true);
 		cell.geometry.setTerminalPoint(new mxPoint(x + length, y), false);
 		cell.geometry.relative = false;

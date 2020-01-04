@@ -63,7 +63,21 @@ export default function setUMLObjs(graph, objLists) {
 		// Drop 成功後新建一個 vertex
 		const dropSuccessCb = function (graph, evt, target, x, y) {
 			var value = {};
-			value['text'] = text;
+			value['UMLtype'] = umlObjImgClass;
+			if (umlObjImgClass === 'text' ||
+				umlObjImgClass === 'rectangle' ||
+				umlObjImgClass === 'if' ||
+				umlObjImgClass === 'actor') {
+				value['text'] = text;
+				value['fontsize'] = 12;
+				value['fontcolor'] = '#000000';
+			}
+			if (umlObjImgClass === 'rectangle' ||
+				umlObjImgClass === 'if' ||
+				umlObjImgClass === 'actor') {
+				value['fillcolor'] = '#FFFFFF';
+				value['opacity'] = 100;
+			}
 
 			const cell = new mxCell(value, new mxGeometry(0, 0, width, height), umlObjImgClass);
 			cell.vertex = true;

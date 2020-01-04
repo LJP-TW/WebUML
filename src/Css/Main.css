@@ -5,6 +5,9 @@ html, body {
     width: 100%;
     height: 100%;
 }
+label {
+    display: block;
+}
 #root, #main {
     width: 100%;
     height: 100%;
@@ -39,7 +42,7 @@ html, body {
     position: relative;
     float: left;
     overflow: hidden;
-    width: 17%;
+    width: 18%;
     height: 80%;
     background-color: #eeeeee;
     cursor: default;
