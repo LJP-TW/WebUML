@@ -4,7 +4,7 @@ import { mxUtils,
 	mxGeometry, 
 	mxDragSource } from "mxgraph-js";
 
-export default function setUMLObjs(graph) {
+export default function setUMLObjs(graph, objLists) {
 	const setObj = function(umlObjImgClass, width, height, text) {
 		// 判斷 Drop 是否有效
 		const dropGraph = function(evt) {
@@ -19,7 +19,7 @@ export default function setUMLObjs(graph) {
 			return null;
 		};
 
-		const objectLists = document.getElementById("objectLists");
+		const objectLists = document.getElementById(objLists);
 
 		var li = document.createElement("li");
 		var img = document.createElement("img");

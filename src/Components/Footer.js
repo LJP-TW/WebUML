@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import setUMLObjs from "./setUMLObjs"
 
 export default function Footer(props) {
+    const objLists = "objectLists";
+
     // Handle parent call
     useEffect(() => {
         if (props.parentCall !== null) {
             if (props.parentCall.toLowerCase() === 'setumlobjs') {
-                setUMLObjs(props.graph);
+                setUMLObjs(props.graph, objLists);
             }
         }
     }, [props.parentCall]);
@@ -14,7 +16,7 @@ export default function Footer(props) {
     return (
         <div id={props.id}>
             <div class="float_center">
-                <ul id="objectLists">
+                <ul id={objLists}>
                 </ul>
             </div>
         </div>
