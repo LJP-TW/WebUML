@@ -1,13 +1,44 @@
-import { mxUtils, 
-	mxEvent, 
-	mxCell, 
-	mxGeometry, 
-	mxDragSource } from "mxgraph-js";
+import {
+	mxUtils,
+	mxEvent,
+	mxCell,
+	mxGeometry,
+	mxDragSource
+} from "mxgraph-js";
 
 export default function setUMLObjs(graph, objLists) {
-	const setObj = function(umlObjImgClass, width, height, text) {
+	var doc = mxUtils.createXmlDocument();
+
+	// Overrides method to provide a cell label in the display
+	graph.convertValueToString = function (cell) {
+		if (cell.value !== null) {
+			return cell.value.text;
+		}
+		else {
+			return '';
+		}
+	};
+
+	// Overrides method to store a cell label in the model
+	var graphCellLabelChanged = graph.cellLabelChanged;
+	graph.cellLabelChanged = function (cell, value, autoSize) {
+		// 複製出一個新 cell.value object
+		var elt = { ...cell.value };
+		elt.text = value;
+
+		arguments[1] = elt;
+		graphCellLabelChanged.apply(this, arguments);
+	};
+
+	// Overrides method to create the editing value
+	var getEditingValue = graph.getEditingValue;
+	graph.getEditingValue = function (cell) {
+		return cell.value.text;
+	};
+
+	const setObj = function (umlObjImgClass, width, height, text) {
 		// 判斷 Drop 是否有效
-		const dropGraph = function(evt) {
+		const dropGraph = function (evt) {
 			const x = mxEvent.getClientX(evt);
 			const y = mxEvent.getClientY(evt);
 			// 獲取鼠標點擊的座標上最頂層的元素
@@ -30,8 +61,11 @@ export default function setUMLObjs(graph, objLists) {
 		objectLists.appendChild(li);
 
 		// Drop 成功後新建一個 vertex
-		const dropSuccessCb = function(graph, evt, target, x, y) {
-			const cell = new mxCell(text, new mxGeometry(0, 0, width, height), umlObjImgClass);
+		const dropSuccessCb = function (graph, evt, target, x, y) {
+			var value = {};
+			value['text'] = text;
+
+			const cell = new mxCell(value, new mxGeometry(0, 0, width, height), umlObjImgClass);
 			cell.vertex = true;
 			const cells = graph.importCells([cell], x, y, target);
 			if (cells != null && cells.length > 0) {
@@ -43,7 +77,7 @@ export default function setUMLObjs(graph, objLists) {
 		var dragElt = document.createElement("div");
 		dragElt.style.border = "dashed black 1px";
 		dragElt.style.width = width + "px";
-		dragElt.style.height = height + "px";		
+		dragElt.style.height = height + "px";
 
 		var ds = mxUtils.makeDraggable(img, dropGraph, dropSuccessCb, dragElt, null, null, graph.autoscroll, true);
 		// Restores original drag icon while outside of graph

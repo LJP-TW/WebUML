@@ -19,7 +19,6 @@ export default function Toolbar(props) {
         );
     }
     else {
-        console.log(btns);
         return (
             <div id={props.id}>
                 {btns.map(item => (
