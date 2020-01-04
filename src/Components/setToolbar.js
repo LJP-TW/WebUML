@@ -1,23 +1,16 @@
-import { mxEvent,
-	mxGeometry ,
+import { mxGeometry ,
 	mxCell,
 	mxPoint } from "mxgraph-js";
 
-export default function setToolbar(graph) {
+export default function setToolbar(graph, setBtns) {
 	// Adds zoom buttons in top, left corner
-	var buttons = document.createElement("div");
+	var btnsObj = [];
 
 	const addButton = function (imgClass, funct) {
-		var btn = document.createElement("img");
-		btn.classList.add("sidetool");
-		btn.classList.add(imgClass);
-
-		mxEvent.addListener(btn, "click", function(evt) {
-			funct();
-			mxEvent.consume(evt);
-		});
-
-		buttons.appendChild(btn);
+		var btnObj = {};
+		btnObj['class'] = imgClass;
+		btnObj['clickEvt'] = funct;
+		btnsObj.push(btnObj);
 	}
 
 	const createEdge = function(style, length, text) {
@@ -59,6 +52,5 @@ export default function setToolbar(graph) {
 		createEdge('aggregationArrow', 100, "");
 	})
 
-	const sideToolbar = document.getElementById("toolbar");
-	sideToolbar.appendChild(buttons);
+	setBtns(btnsObj);
 }
