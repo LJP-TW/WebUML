@@ -47,7 +47,7 @@ export default function Main(props) {
             // 開啟範圍選取
             new mxRubberband(graph);
 
-            // 設定刪除事件
+            // Shift+Backspace 刪除選取的 cells
             setDeleteEvent(graph);
 
             // 設定 mxStylesheet
