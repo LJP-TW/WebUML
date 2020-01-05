@@ -3,7 +3,6 @@ import { mxEvent,
 
 export default function deleteEvent(graph) {
 	mxEvent.addListener(document, 'keydown', mxUtils.bind(this, function(evt) {
-		console.log(evt);
 		if(evt.key === 'Backspace' && evt.shiftKey === true && graph.isEnabled() && !graph.isSelectionEmpty()) {
 			graph.removeCells();
 		}

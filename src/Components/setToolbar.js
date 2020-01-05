@@ -53,12 +53,21 @@ export default function setToolbar(graph, setBtns) {
 		
 		while (elt != null)
 		{
-  			cells.push(codec.decode(elt));
+  			cells.push(codec.decodeCell(elt));
   			elt = elt.nextSibling;
 		}
+		
 		// Here is the problem 
-		graph.addCells(cells);
+		//graph.addCells(cells);
 		//
+
+		console.log(cells);
+
+		const cell = new mxCell({'text': 'Hello'}, new mxGeometry(20, 20, 80, 30), 'rectangle');
+		cell.vertex = true;
+		console.log(cell);
+		//const cellss = graph.importCells([cell], 0, 0, null);
+		graph.addCells([cell]);
 	}
 
 	const SaveAsXml = function(xml){
@@ -89,6 +98,8 @@ export default function setToolbar(graph, setBtns) {
     	const w = Math.ceil(bounds.width * scale / scale + 2 * border);
     	const h = Math.ceil(bounds.height * scale / scale + 2 * border);
 		var xml = mxUtils.getXml(root);
+		console.log(xml);
+		console.log(graph.getSvg);
 		// Output xml to func that can convert to img format
 		//
 		
