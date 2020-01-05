@@ -101,6 +101,42 @@ export default function AttributeEditor(props) {
         }
     }
 
+    function handleStrokecolorChange(event) {
+        var isColor = /^#[0-9A-F]{6}$/i;
+
+        if (isColor.test(event.target.value) === true) {
+            var elt = { ...attr };
+            elt.strokecolor = event.target.value;
+
+            setAttr(elt);
+            props.graph.model.setValue(selected, elt);
+
+            // 第三個參數若未指定, 預設是所有選取的 cell
+            props.graph.setCellStyles('strokeColor', elt.strokecolor, [selected]);
+        }
+    }
+
+    function handleStrokewidthChange(event) {
+        var elt = { ...attr };
+        elt.strokewidth = event.target.value;
+
+        setAttr(elt);
+    }
+
+    function handleStrokewidthBlur(event) {
+        var strokewidth = parseInt(event.target.value);
+        if (isNaN(strokewidth) === false && strokewidth > 0 && Number.isInteger(strokewidth)) {
+            var elt = { ...attr };
+            elt.strokewidth = strokewidth;
+
+            setAttr(elt);
+            props.graph.model.setValue(selected, elt);
+
+            // 第三個參數若未指定, 預設是所有選取的 cell
+            props.graph.setCellStyles('strokeWidth', strokewidth);
+        }
+    }
+
     function handleSubmit(event) {
         event.preventDefault();
     }
@@ -213,6 +249,48 @@ export default function AttributeEditor(props) {
                         <label>
                             Background color:
                             <input type="color" value={attr.fillcolor} onChange={handleFillcolorChange} />
+                        </label>
+                        <label>
+                            Opacity:
+                            <input type="number" value={attr.opacity} onChange={handleOpacityChange} onBlur={handleOpacityBlur} />
+                        </label>
+                    </form>
+                </div>
+            );
+        }
+        else if (attr.UMLtype === 'begin') {
+            return (
+                <div id={props.id}>
+                    <h1>AttributeEditor</h1>
+                    <form onSubmit={handleSubmit}>
+                        <label>
+                            Color:
+                            <input type="color" value={attr.fillcolor} onChange={handleFillcolorChange} />
+                        </label>
+                        <label>
+                            Opacity:
+                            <input type="number" value={attr.opacity} onChange={handleOpacityChange} onBlur={handleOpacityBlur} />
+                        </label>
+                    </form>
+                </div>
+            );
+        }
+        else if (attr.UMLtype === 'end') {
+            return (
+                <div id={props.id}>
+                    <h1>AttributeEditor</h1>
+                    <form onSubmit={handleSubmit}>
+                        <label>
+                            Color:
+                            <input type="color" value={attr.fillcolor} onChange={handleFillcolorChange} />
+                        </label>
+                        <label>
+                            Stroke color:
+                            <input type="color" value={attr.strokecolor} onChange={handleFillcolorChange} />
+                        </label>
+                        <label>
+                            Stroke width:
+                            <input type="number" value={attr.strokewidth} onChange={handleFillcolorChange} />
                         </label>
                         <label>
                             Opacity:

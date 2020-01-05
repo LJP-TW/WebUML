@@ -38,6 +38,7 @@ export default function setStylesheet(graph) {
     const setBus = function () {
 	    var style = [];
         style[mxConstants.STYLE_ENDARROW] = null;
+        style[mxConstants.STYLE_FILLCOLOR] = '#000000';
         style[mxConstants.STYLE_STROKECOLOR] = '#000000';
         style[mxConstants.STYLE_STROKEWIDTH] = 3;
         graph.getStylesheet().putCellStyle('bus', style);

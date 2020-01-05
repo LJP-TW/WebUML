@@ -78,6 +78,16 @@ export default function setUMLObjs(graph, objLists) {
 				value['fillcolor'] = '#FFFFFF';
 				value['opacity'] = 100;
 			}
+			if (umlObjImgClass === 'begin') {
+				value['fillcolor'] = '#000000';
+				value['opacity'] = 100;
+			}
+			if (umlObjImgClass === 'end') {
+				value['fillcolor'] = '#000000';
+				value['opacity'] = 100;
+				value['strokecolor'] = '#FF0000';
+				value['strokewidth'] = 2;
+			}
 
 			const cell = new mxCell(value, new mxGeometry(0, 0, width, height), umlObjImgClass);
 			cell.vertex = true;
