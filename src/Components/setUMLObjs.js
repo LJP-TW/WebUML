@@ -36,7 +36,8 @@ export default function setUMLObjs(graph, objLists) {
 		return cell.value.text;
 	};
 
-	const setObj = function (umlObjImgClass, width, height, text) {
+	const setObj = function (umlObjImgClass, width, height, value) {
+		console.log(value);
 		// 判斷 Drop 是否有效
 		const dropGraph = function (evt) {
 			const x = mxEvent.getClientX(evt);
@@ -62,33 +63,7 @@ export default function setUMLObjs(graph, objLists) {
 
 		// Drop 成功後新建一個 vertex
 		const dropSuccessCb = function (graph, evt, target, x, y) {
-			var value = {};
-			value['UMLtype'] = umlObjImgClass;
-			if (umlObjImgClass === 'text' ||
-				umlObjImgClass === 'rectangle' ||
-				umlObjImgClass === 'if' ||
-				umlObjImgClass === 'actor') {
-				value['text'] = text;
-				value['fontsize'] = 12;
-				value['fontcolor'] = '#000000';
-			}
-			if (umlObjImgClass === 'rectangle' ||
-				umlObjImgClass === 'if' ||
-				umlObjImgClass === 'actor') {
-				value['fillcolor'] = '#FFFFFF';
-				value['opacity'] = 100;
-			}
-			if (umlObjImgClass === 'begin') {
-				value['fillcolor'] = '#000000';
-				value['opacity'] = 100;
-			}
-			if (umlObjImgClass === 'end') {
-				value['fillcolor'] = '#000000';
-				value['opacity'] = 100;
-				value['strokecolor'] = '#FF0000';
-				value['strokewidth'] = 2;
-			}
-
+			value.UMLtype = umlObjImgClass;
 			const cell = new mxCell(value, new mxGeometry(0, 0, width, height), umlObjImgClass);
 			cell.vertex = true;
 			const cells = graph.importCells([cell], x, y, target);
@@ -108,11 +83,73 @@ export default function setUMLObjs(graph, objLists) {
 		ds.createDragElement = mxDragSource.prototype.createDragElement;
 	}
 
-	setObj('text', 50, 30, "Text");
-	setObj('rectangle', 120, 80, "");
-	setObj('if', 40, 40, "");
-	setObj('begin', 30, 30, "");
-	setObj('end', 30, 30, "");
-	setObj('bus', 100, 1, "");
-	setObj('actor', 80, 100, "Actor");
+	setObj('text', 50, 30, {
+		// Font
+		'text': 'Text',
+		'fontsize': 12,
+		'fontcolor': '#000000'
+	});
+
+	setObj('rectangle', 120, 80, {
+		// Font
+		'text': '',
+		'fontsize': 12,
+		'fontcolor': '#000000',
+
+		// Block
+		'fillcolor': '#FFFFFF',
+		'strokecolor': '#000000',
+		'strokewidth': 1,
+		'opacity': 100
+	});
+
+	setObj('if', 40, 40, {
+		// Font
+		'text': '',
+		'fontsize': 12,
+		'fontcolor': '#000000',
+
+		// Block
+		'fillcolor': '#FFFFFF',
+		'strokecolor': '#000000',
+		'strokewidth': 1,
+		'opacity': 100
+	});
+
+	setObj('begin', 30, 30, {
+		// Block
+		'fillcolor': '#000000',
+		'strokecolor': '#000000',
+		'strokewidth': 1,
+		'opacity': 100
+	});
+
+	setObj('end', 30, 30, {
+		// Block
+		'fillcolor': '#000000',
+		'strokecolor': '#FF0000',
+		'strokewidth': 2,
+		'opacity': 100
+	});
+
+	setObj('bus', 100, 1, {
+		// Block
+		'fillcolor': '#000000',
+		'strokecolor': '#000000',
+		'strokewidth': 3,
+		'opacity': 100
+	});
+
+	setObj('actor', 80, 100, {
+		// Font
+		'text': 'Actor',
+		'fontsize': 12,
+		'fontcolor': '#000000',
+
+		// Block
+		'fillcolor': '#FFFFFF',
+		'strokecolor': '#000000',
+		'strokewidth': 1,
+		'opacity': 100
+	});
 }
