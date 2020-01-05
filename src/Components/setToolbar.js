@@ -50,7 +50,6 @@ export default function setToolbar(graph, setBtns) {
 		var codec = new mxCodec(doc);
 		var elt = doc.documentElement.firstChild;
 		var cells = [];
-		
 		while (elt != null)
 		{
   			cells.push(codec.decodeCell(elt));
