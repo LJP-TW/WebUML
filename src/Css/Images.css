@@ -68,6 +68,20 @@
     background-position: center center;
 }
 
+.screenshoot {
+    background-image: url('../images/other/screenshoot.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.save {
+    background-image: url('../images/other/save.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 .generalizationArrow {
     background-image: url('../images/other/generalizationArrow.png');
     background-size: cover;
