@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import {
     mxGraph,
     mxRubberband,
-    mxShape
+    mxShape,
+    mxConnectionHandler
 } from "mxgraph-js";
 
 import App from './App';
@@ -16,6 +17,7 @@ import setDeleteEvent from "./setDeleteEvent"
 import setStylesheet from "./setStylesheet"
 import setAnchors from "./setAnchors"
 import setClipboard from "./setClipboard"
+import setDefault from "./setDefault"
 
 import '../Css/Main.css'
 import '../Css/Images.css'
@@ -54,6 +56,9 @@ export default function Main(props) {
             // 設定錨點
             // Overridden to define per-shape connection points
             setAnchors(mxGraph, mxShape);
+
+            // Overridden mxGraph 的一些 function
+            setDefault(graph, mxConnectionHandler);
 
             // 設定剪貼簿
             // 尚有 bug 無法使用

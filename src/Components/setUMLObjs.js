@@ -7,37 +7,7 @@ import {
 } from "mxgraph-js";
 
 export default function setUMLObjs(graph, objLists) {
-	var doc = mxUtils.createXmlDocument();
-
-	// Overrides method to provide a cell label in the display
-	graph.convertValueToString = function (cell) {
-		if (cell.value !== null) {
-			return cell.value.text;
-		}
-		else {
-			return '';
-		}
-	};
-
-	// Overrides method to store a cell label in the model
-	var graphCellLabelChanged = graph.cellLabelChanged;
-	graph.cellLabelChanged = function (cell, value, autoSize) {
-		// 複製出一個新 cell.value object
-		var elt = { ...cell.value };
-		elt.text = value;
-
-		arguments[1] = elt;
-		graphCellLabelChanged.apply(this, arguments);
-	};
-
-	// Overrides method to create the editing value
-	var getEditingValue = graph.getEditingValue;
-	graph.getEditingValue = function (cell) {
-		return cell.value.text;
-	};
-
 	const setObj = function (umlObjImgClass, width, height, value) {
-		console.log(value);
 		// 判斷 Drop 是否有效
 		const dropGraph = function (evt) {
 			const x = mxEvent.getClientX(evt);
