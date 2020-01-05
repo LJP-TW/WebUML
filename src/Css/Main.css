@@ -1,91 +1,93 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 label {
-    display: block;
+  display: block;
 }
-#root, #main {
-    width: 100%;
-    height: 100%;
+#root,
+#main {
+  width: 100%;
+  height: 100%;
 }
 #header {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 10%;
-    background-color: #aaaaaa;
-    cursor: default;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 10%;
+  background-color: #aaaaaa;
+  cursor: default;
 }
 #toolbar {
-    position: relative;
-    float: left;
-    overflow: hidden;
-    width: 2%;
-    height: 80%;
-    background-color: #cccccc;
-    cursor: default;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  width: 3%;
+  height: 80%;
+  background-color: #cccccc;
+  cursor: default;
 }
 #canvas {
-    position: relative;
-    float: left;
-    overflow: hidden;
-    width: 80%;
-    height: 80%;
-    background: url('../images/grid.gif');
-    cursor: default;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  width: 80%;
+  height: 80%;
+  background: url("../images/grid.gif");
+  cursor: default;
 }
 #attributeEditor {
-    position: relative;
-    float: left;
-    overflow: hidden;
-    width: 18%;
-    height: 80%;
-    background-color: #eeeeee;
-    cursor: default;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  width: 17%;
+  height: 80%;
+  background-color: #eeeeee;
+  cursor: default;
 }
 #objectSelector {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 10%;
-    background-color: #dddddd;
-    cursor: default;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 10%;
+  background-color: #dddddd;
+  cursor: default;
 }
 /* Reference from https://codepen.io/alexandredees/pen/ojaFr */
 /* The Magic Float Center Code */
 .float_center {
-    float: right;
-    
-    position: relative;
-    left: -50%; /* or right 50% */
-    text-align: left;
+  float: right;
+
+  position: relative;
+  left: -50%; /* or right 50% */
+  text-align: left;
 }
 .float_center > ul {
-    position: relative;
-    left: 50%;
-    list-style-type: none;
+  position: relative;
+  left: 50%;
+  list-style-type: none;
 }
-.float_center > ul > li{
-    float: left;
-    list-style-type: none;
+.float_center > ul > li {
+  float: left;
+  list-style-type: none;
 }
 body .umlObj {
-    overflow: hidden;
-    width: 3vw;
-    height: 3vw;
-    margin-left: 10px;
-    margin-right: 10px;
+  overflow: hidden;
+  width: 3vw;
+  height: 3vw;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .sidetool {
-    position: relative;
-    overflow: hidden;
-    width: 1.5vw;
-    height: 1.5vw;
-    margin-top: 10%;
-    margin-left: 10%;
-    cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: 2vw;
+  height: 2vw;
+  margin-top: 10%;
+  margin-left: 10%;
+  cursor: pointer;
 }

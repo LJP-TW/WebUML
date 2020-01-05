@@ -1,125 +1,125 @@
 .pika {
-    background-image: url('../images/other/pika.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../images/other/pika.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .icon_128 {
-    background-image: url('../images/other/icon_128.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../images/other/icon_128.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .actor {
-    background-image: url('../images/other/actor.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../images/other/actor.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .rectangle {
-    background-image: url('../images/other/rectangle.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../images/other/rectangle.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .if {
-    background-image: url('../images/other/if.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../images/other/if.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .begin {
-    background-image: url('../images/other/begin.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../images/other/begin.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .end {
-    background-image: url('../images/other/end.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../images/other/end.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .arrow {
-    background-image: url('../images/other/arrow.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../images/other/arrow.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .dashedArrow {
-    background-image: url('../images/other/dashedArrow.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../images/other/dashedArrow.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .implementArrow {
-    background-image: url('../images/other/implementArrow.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../images/other/implementArrow.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .screenshoot {
-    background-image: url('../images/other/screenshoot.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../images/other/screenshoot.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .save {
-    background-image: url('../images/other/save.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../images/other/save.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .generalizationArrow {
-    background-image: url('../images/other/generalizationArrow.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../images/other/generalizationArrow.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .aggregationArrow {
-    background-image: url('../images/other/aggregationArrow.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../images/other/aggregationArrow.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .bus {
-    background-image: url('../images/other/bus.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../images/other/bus.PNG");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .text {
-    background-image: url('../images/other/text.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../images/other/text.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
-.navigate_plus{
-    background-image: url('../images/navigate_plus.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+.navigate_plus {
+  background-image: url("../images/navigate_plus.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .navigate_minus {
-    background-image: url('../images/navigate_minus.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../images/navigate_minus.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
