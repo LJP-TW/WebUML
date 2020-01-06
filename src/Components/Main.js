@@ -4,7 +4,9 @@ import {
     mxGraph,
     mxRubberband,
     mxShape,
-    mxConnectionHandler
+    mxConnectionHandler,
+    mxGraphModel,
+    mxGeometry
 } from "mxgraph-js";
 
 import App from './App';
@@ -34,6 +36,10 @@ export default function Main(props) {
     // 在 graph 更動時會呼叫
     useEffect(() => {
         if (graph !== null && graph.init === true) {
+            // 設好 window global 變數, 用於 mxGraph 內部
+            window['mxGraphModel'] = mxGraphModel;
+            window['mxGeometry'] = mxGeometry;
+
             // 初始化 mxGraph
             graph.init = false;
             setGraph(graph);

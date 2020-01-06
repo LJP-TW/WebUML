@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.3",
     "@testing-library/user-event": "^7.1.2",
+    "html2canvas": "^1.0.0-rc.5",
     "mxgraph": "^4.0.6",
     "mxgraph-js": "^1.0.1",
     "react": "^16.12.0",
