@@ -31,6 +31,7 @@ export default function Main(props) {
     const [graph, setGraph] = useState(null);
     const [callFooter, setCallFooter] = useState(null);
     const [callToolbar, setCallToolbar] = useState(null);
+    const [callHeader, setCallHeader] = useState(null);
     const [callAttributeEditor, setCallAttributeEditor] = useState(null);
 
     // 在 graph 更動時會呼叫
@@ -78,12 +79,14 @@ export default function Main(props) {
 
             // 設定 Attribute Editor
             setCallAttributeEditor('setAttributeEditor');
+
+            setCallHeader('setHeader');
         }
     }, [graph]);
 
     return (
         <div id='main'>
-            <Header id='header' />
+            <Header id='header' graph={graph} parentCall={callHeader} />
             <Toolbar id='toolbar' graph={graph} parentCall={callToolbar}/>
             <App id='canvas' setGraph={setGraph} />
             <AttributeEditor id='attributeEditor' graph={graph} parentCall={callAttributeEditor} />

@@ -82,6 +82,13 @@
     background-position: center center;
 }
 
+.read {
+    background-image: url('../images/other/read.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 .generalizationArrow {
     background-image: url('../images/other/generalizationArrow.png');
     background-size: cover;

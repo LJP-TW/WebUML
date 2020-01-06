@@ -9,11 +9,13 @@ import {
 	mxCodec
 } from "mxgraph-js";
 import html2canvas from 'html2canvas';
+import 'js-file-download';
+
 
 export default function setToolbar(graph, setBtns) {
 	// Adds zoom buttons in top, left corner
 	var btnsObj = [];
-
+	var fileUploader;
 	const addButton = function (imgClass, funct) {
 		var btnObj = {};
 		btnObj['class'] = imgClass;
@@ -45,8 +47,8 @@ export default function setToolbar(graph, setBtns) {
 		graph.addCell(cell);
 	}
 
-	const Test = function () {
-		var xmlString = '<root><mxCell id="0"/><mxCell id="1" parent="0"/><mxCell id="2" style="begin" vertex="1" parent="1"><Object fillcolor="#000000" strokecolor="#000000" strokewidth="1" opacity="100" UMLtype="begin" as="value"/><mxGeometry x="640" y="360" width="30" height="30" as="geometry"/></mxCell><mxCell id="3" style="end" vertex="1" parent="1"><Object fillcolor="#000000" strokecolor="#FF0000" strokewidth="2" opacity="100" UMLtype="end" as="value"/><mxGeometry x="750" y="360" width="30" height="30" as="geometry"/></mxCell><mxCell id="4" style="exitX=1;exitY=0.5;" edge="1" parent="1" source="2" target="3"><Object text="" UMLtype="arrow" fontsize="12" fontcolor="#000000" strokecolor="#000000" strokewidth="1" dashed="0" endarrow="block" endfill="1" as="value"/><mxGeometry relative="1" as="geometry"/></mxCell></root>';
+	const DrawGraph = function (xmlString) {
+		//var xmlString = '<root><mxCell id="0"/><mxCell id="1" parent="0"/><mxCell id="2" style="text" vertex="1" parent="1"><Object text="Text" fontsize="12" fontcolor="#000000" UMLtype="text" as="value"/><mxGeometry x="510" y="240" width="50" height="30" as="geometry"/></mxCell><mxCell id="3" style="rectangle" vertex="1" parent="1"><Object text="" fontsize="12" fontcolor="#000000" fillcolor="#FFFFFF" strokecolor="#000000" strokewidth="1" opacity="100" UMLtype="rectangle" as="value"/><mxGeometry x="710" y="330" width="120" height="80" as="geometry"/></mxCell></root>';
 		var doc = mxUtils.parseXml(xmlString);
 		var codec = new mxCodec(doc);
 		var elt = doc.documentElement.firstChild;
@@ -58,15 +60,29 @@ export default function setToolbar(graph, setBtns) {
 			console.log(a);
 			elt = elt.nextSibling;
 		}
-
 		graph.addCells(cells);
 	}
 
-	const SaveAsXml = function (xml) {
-		// Output xml.xml file
-		/*
-		/ code here
-		*/
+	const SaveXml = function (xml) {
+		var fileDownload = require('js-file-download');
+		fileDownload(xml, 'filename.xml');
+	}
+
+	const ReadXml = function (){
+		var fileUploader = document.createElement('input');
+		fileUploader.type = 'file';
+		fileUploader.click();
+		var fileReader = new FileReader();
+		fileUploader.addEventListener("change", function(event) {
+			if (this.files.length > 0) {
+			  fileReader.readAsText(this.files[0]);
+			}else{
+			}
+		}, false);
+		fileReader.onload = function(e) {
+			DrawGraph(this.result);
+			alert('Load successed!');
+		}
 	}
 
 	addButton("screenshoot", function () {
@@ -83,12 +99,11 @@ export default function setToolbar(graph, setBtns) {
 		var result = encoder.encode(graph.getModel());
 		var xml = mxUtils.getXml(result);
 		xml = xml.substring(xml.indexOf("<mxGraphModel>") + "<mxGraphModel>".length, xml.indexOf("</mxGraphModel>"));
-		SaveAsXml(xml);
-		console.log(xml);
+		SaveXml(xml);
 	});
 
-	addButton("test", function () {
-		Test();
+	addButton("read", function () {
+		ReadXml();
 	});
 
 	addButton("navigate_plus", function () {
@@ -140,4 +155,5 @@ export default function setToolbar(graph, setBtns) {
 	})
 
 	setBtns(btnsObj);
+	
 }
