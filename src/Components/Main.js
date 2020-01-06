@@ -69,7 +69,7 @@ export default function Main(props) {
 
             // 設定剪貼簿
             // 尚有 bug 無法使用
-            // setClipboard(graph);
+            setClipboard(graph);
 
             // 設定 UML Object 可拉進 graph
             setCallFooter('setUMLObjs');
