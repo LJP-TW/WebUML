@@ -71,12 +71,16 @@ export default function setToolbar(graph, setBtns) {
 	const ReadXml = function (){
 		var fileUploader = document.createElement('input');
 		fileUploader.type = 'file';
+		
 		fileUploader.click();
 		var fileReader = new FileReader();
 		fileUploader.addEventListener("change", function(event) {
-			if (this.files.length > 0) {
+			var xmlType = /xml.*/;
+			if (this.files.length > 0 && this.files[0].type.match(xmlType)) {
 			  fileReader.readAsText(this.files[0]);
 			}else{
+				alert('File Type Error');
+				return;
 			}
 		}, false);
 		fileReader.onload = function(e) {
