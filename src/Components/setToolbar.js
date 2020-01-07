@@ -64,6 +64,7 @@ export default function setToolbar(graph, setBtns) {
 	}
 
 	const SaveXml = function (xml) {
+		// file name
 		var filename = document.getElementById('filename').value;
 		if(filename == ''){
 			filename = 'WebUML';
