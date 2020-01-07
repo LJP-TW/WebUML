@@ -94,10 +94,14 @@ export default function setToolbar(graph, setBtns) {
 	}
 
 	addButton("screenshoot", function () {
+		var filename = document.getElementById('filename').value;
+		if(filename == ''){
+			filename = 'WebUML';
+		}
 		html2canvas(document.querySelector("#canvas")).then(canvas => {
 			var download = document.createElement('a');
 			download.href = canvas.toDataURL("image/png");
-			download.download = 'WebUML.png';
+			download.download = filename+'.png';
 			download.click();
 		});
 	});
