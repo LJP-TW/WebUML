@@ -12,6 +12,8 @@ export default function Header(props) {
     }, [props.parentCall]);
     
     return (
-        <div id={props.id}></div>
+        <div id={props.id}>
+            <input id="filename" type="text" placeholder="Untitled fileName"/>
+        </div>
     );
 }

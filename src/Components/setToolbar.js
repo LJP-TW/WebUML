@@ -64,8 +64,12 @@ export default function setToolbar(graph, setBtns) {
 	}
 
 	const SaveXml = function (xml) {
+		var filename = document.getElementById('filename').value;
+		if(filename == ''){
+			filename = 'WebUML';
+		}
 		var fileDownload = require('js-file-download');
-		fileDownload(xml, 'filename.xml');
+		fileDownload(xml, filename+'.xml');
 	}
 
 	const ReadXml = function (){
