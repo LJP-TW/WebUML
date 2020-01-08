@@ -18,23 +18,25 @@ label {
     overflow: hidden;
     width: 100%;
     height: 10%;
-    background-color: #aaaaaa;
+    background-color: #e9e8e8;
+    /* border-bottom: groove;
+    border-width: thin; */
     cursor: default;
 }
 #toolbar {
     position: relative;
     float: left;
     overflow: hidden;
-    width: 2%;
+    width: 3%;
     height: 80%;
-    background-color: #cccccc;
+    background-color: #fbfbf6;
     cursor: default;
 }
 #canvas {
     position: relative;
     float: left;
     overflow: hidden;
-    width: 98%;
+    width: 97%;
     height: 80%;
     background: url('../images/grid.gif');
     cursor: default;
@@ -56,7 +58,9 @@ label {
     overflow: hidden;
     width: 100%;
     height: 10%;
-    background-color: #dddddd;
+    background-color: #faf8f8;
+    /* border-top: groove; */
+    /* border-width: thin; */
     cursor: default;
 }
 /* Reference from https://codepen.io/alexandredees/pen/ojaFr */

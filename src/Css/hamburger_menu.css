@@ -17,11 +17,13 @@
   width: 40px;
   height: 32px;
   position: absolute;
-  top: -7px;
+  top: 1px;
   /* left: -5px; */
-  right: 0%;
+  right: -150%;
   
   cursor: pointer;
+  
+  transform: translate(0, -50px);
   
   opacity: 0; /* hide this */
   z-index: 2; /* and place it over the hamburger */
@@ -37,12 +39,16 @@
   height: 4px;
   margin-bottom: 5px;
   position: relative;
+  top: 10px;
+  right: -40px;
   
-  background: #857676;
+  background: #5c4746;
   border-radius: 3px;
 
   z-index: 1;
   
+  transform: translate(0, -50px);
+
   transform-origin: 4px 0px;
   
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
@@ -65,7 +71,7 @@
 {
   opacity: 1;
   transform: rotate(45deg) translate(-1px, -1px);
-  background: #232323;
+  background: #9b9c9c;
 }
 /* invisible middle one */
 #menuToggle input:checked ~ span:nth-child(3)
@@ -87,11 +93,12 @@
 {
   position: absolute;
   width: 450px;
-  height: 630px;
-  margin: -80% 0 0 -620%;
-  /* padding-top: 125px; */
-  
-  background: #ededed;
+  height: 631px;
+  margin: -81% 0 0 -620%;
+  /* border-left: groove; */
+  /* border-width: thin; */
+  padding-top: 120%;
+  background: #f8fbfb;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
