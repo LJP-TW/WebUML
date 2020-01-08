@@ -26,7 +26,7 @@ export default function setUMLObjs(graph, objLists) {
 		const objectLists = document.getElementById(objLists);
 
 		var li = document.createElement("li");
-		var img = document.createElement("img");
+		var img = document.createElement("div");
 		img.classList.add("umlObj");
 		img.classList.add(umlObjImgClass);
 
