@@ -4,7 +4,9 @@ import {
     mxGraph,
     mxRubberband,
     mxShape,
-    mxConnectionHandler
+    mxConnectionHandler,
+    mxGraphModel,
+    mxGeometry
 } from "mxgraph-js";
 
 import App from './App';
@@ -29,11 +31,16 @@ export default function Main(props) {
     const [graph, setGraph] = useState(null);
     const [callFooter, setCallFooter] = useState(null);
     const [callToolbar, setCallToolbar] = useState(null);
+    const [callHeader, setCallHeader] = useState(null);
     const [callAttributeEditor, setCallAttributeEditor] = useState(null);
 
     // 在 graph 更動時會呼叫
     useEffect(() => {
         if (graph !== null && graph.init === true) {
+            // 設好 window global 變數, 用於 mxGraph 內部
+            window['mxGraphModel'] = mxGraphModel;
+            window['mxGeometry'] = mxGeometry;
+
             // 初始化 mxGraph
             graph.init = false;
             setGraph(graph);
@@ -62,7 +69,7 @@ export default function Main(props) {
 
             // 設定剪貼簿
             // 尚有 bug 無法使用
-            // setClipboard(graph);
+            setClipboard(graph);
 
             // 設定 UML Object 可拉進 graph
             setCallFooter('setUMLObjs');
@@ -72,12 +79,14 @@ export default function Main(props) {
 
             // 設定 Attribute Editor
             setCallAttributeEditor('setAttributeEditor');
+
+            setCallHeader('setHeader');
         }
     }, [graph]);
 
     return (
         <div id='main'>
-            <Header id='header' />
+            <Header id='header' graph={graph} parentCall={callHeader} />
             <Toolbar id='toolbar' graph={graph} parentCall={callToolbar}/>
             <App id='canvas' setGraph={setGraph} />
             <AttributeEditor id='attributeEditor' graph={graph} parentCall={callAttributeEditor} />
