@@ -4,6 +4,7 @@ html, body {
     overflow: hidden;
     width: 100%;
     height: 100%;
+    font-family: "Avenir Next", "Avenir", sans-serif;
 }
 label {
     display: block;
@@ -39,7 +40,7 @@ label {
     cursor: default;
 }
 
-#attributeEditor {
+/* #attributeEditor {
     position: absolute;
     float: left;
     overflow: hidden;
@@ -47,9 +48,8 @@ label {
     height: 80%;
     right: 0%;
     background-color: #eeeeee;
-    cursor: default;
-    display: none;
-}
+    cursor: default;   
+} */
 
 #objectSelector {
     position: relative;

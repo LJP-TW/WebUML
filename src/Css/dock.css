@@ -25,23 +25,9 @@
 #dock-container li:hover img { 
     -webkit-transform: scale(2);
     margin: 0 2em;
-  }
-  #dock-container li:hover + li img,
-  #dock-container li.prev img {
+}
+#dock-container li:hover + li img,
+#dock-container li.prev img {
     -webkit-transform: scale(1.5);
     margin: 0 1.5em;
-}
-#dock-container li span {
-    display: none;
-    position: absolute;
-    bottom: 140px;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0,0,0,0.75);
-    padding: 4px 0;
-    border-radius: 12px;
-}
-#dock-container li:hover span {
-    display: block;
-    color: #fff;
 }

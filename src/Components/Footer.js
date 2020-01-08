@@ -16,11 +16,9 @@ export default function Footer(props) {
 	return (
 		<div id={props.id}>
 			<div id="dock-container">
-				<div id="dock">
 					<div class="float_center">
 						<ul id={objLists}></ul>
 					</div>
-				</div>
 			</div>
 		</div>
 	);
