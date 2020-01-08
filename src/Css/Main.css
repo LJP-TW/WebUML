@@ -33,20 +33,23 @@ label {
     position: relative;
     float: left;
     overflow: hidden;
-    width: 80%;
+    width: 98%;
     height: 80%;
     background: url('../images/grid.gif');
     cursor: default;
 }
+
 #attributeEditor {
-    position: relative;
+    position: absolute;
     float: left;
     overflow: hidden;
     width: 18%;
     height: 80%;
+    right: 0%;
     background-color: #eeeeee;
     cursor: default;
 }
+
 #objectSelector {
     position: relative;
     overflow: hidden;

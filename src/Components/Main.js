@@ -85,3 +85,5 @@ export default function Main(props) {
         </div>
     );
 }
+
+// <AttributeEditor id='attributeEditor' graph={graph} parentCall={callAttributeEditor} />
