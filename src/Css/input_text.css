@@ -1,0 +1,48 @@
+:root {
+    --input-color: #99a3ba;
+    --input-border: #cdd9ed;
+    --input-background: #fff;
+    --input-placeholder: #cbd1dc;
+    --input-border-focus: #275efe;
+    --group-color: var(--input-color);
+    --group-border: var(--input-border);
+    --group-background: #eef4ff;
+    --group-color-focus: #fff;
+    --group-border-focus: var(--input-border-focus);
+    --group-background-focus: #678efe;
+}
+.form-group {
+    position: relative;
+    display: flex;
+    padding-top: 1.5%;
+    padding-left: 4%;
+}
+.form-group > span:not(:first-child):not(:last-child), .form-group .form-field:not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+.form-group > span:first-child, .form-group .form-field:first-child {
+    border-radius: 6px 0 0 6px;
+}
+
+#filename{
+    border-radius: 0px 6px 6px 0px;
+    border: none;
+}
+
+
+.form-group > span {
+    text-align: center;
+    padding: 5px 17px;
+    font-size: 14px;
+    color: var(--group-color);
+    background: var(--group-background);
+    /* border: 1px solid var(--group-border); */
+    transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+.form-group:focus-within > span {
+    color: var(--group-color-focus);
+    background: var(--group-background-focus);
+    border-color: var(--group-border-focus);
+}
+
+

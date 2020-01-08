@@ -23,7 +23,7 @@ export default function Toolbar(props) {
             <div id={props.id}>
                 {btns.map(item => (
                     <React.Fragment>
-                        <img class={`sidetool ${item.class}`} onClick={item.clickEvt}></img>
+                        <div class={`sidetool ${item.class}`} onClick={item.clickEvt}></div>
                     </React.Fragment>
                 ))}
             </div>

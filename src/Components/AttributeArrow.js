@@ -69,31 +69,35 @@ export default function AttributeArrow(props) {
     if (props.attr.UMLtype === 'arrow') {
         return (
             <React.Fragment>
-                <h2>Arrow</h2>
-                <label>
-                    Stroke color:
-                    <input type="color" value={props.attr.strokecolor} onChange={handleStrokecolorChange} />
-                </label>
-                <label>
-                    Stroke width:
-                    <input type="number" value={props.attr.strokewidth} onChange={handleStrokewidthChange} onBlur={handleStrokewidthBlur} />
-                </label>
+				<font size="5" class="attrTitle">
+					Arrow
+                </font>
                 <label>
                     Dashed:
                     <input type="checkbox" value={props.attr.dashed} onChange={handleDashedChange} checked={props.attr.dashed > 0} />
                 </label>
                 <label>
+                    Endfill:
+                    <input type="checkbox" value={props.attr.endfill} onChange={handleEndfillChange} checked={props.attr.endfill > 0}/>
+                </label>
+                <label>
+                    Stroke color:
+                    <input class="attrblock" type="color" value={props.attr.strokecolor} onChange={handleStrokecolorChange} />
+                </label>
+                <label>
+                    Stroke width:
+                    <input class="attrblock" type="number" value={props.attr.strokewidth} onChange={handleStrokewidthChange} onBlur={handleStrokewidthBlur} />
+                </label>
+                <label>
                     Arrow style:
-                    <select value={props.attr.endarrow} onChange={handleEndarrowChange}>
+                    <select class="attrblock" value={props.attr.endarrow} onChange={handleEndarrowChange}>
                         <option value="block">block</option>
                         <option value="open">open</option>
                         <option value="diamond">diamond</option>
                     </select>
                 </label>
-                <label>
-                    Endfill:
-                    <input type="checkbox" value={props.attr.endfill} onChange={handleEndfillChange} checked={props.attr.endfill > 0}/>
-                </label>
+                
+                
             </React.Fragment>
         );
     }

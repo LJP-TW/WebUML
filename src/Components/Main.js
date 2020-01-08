@@ -75,6 +75,9 @@ export default function Main(props) {
 			setCallAttributeEditor("setAttributeEditor");
 
 			setCallHeader("setHeader");
+
+			var attrTriger = document.getElementById('attrTriger');
+			attrTriger.click();
 		}
 	}, [graph]);
 
@@ -85,7 +88,7 @@ export default function Main(props) {
 			<App id="canvas" setGraph={setGraph} />
 
 			<div id="menuToggle">
-				<input type="checkbox" />
+				<input id="attrTriger" type="checkbox" />
 				<span></span>
 				<span></span>
 				<span></span>
