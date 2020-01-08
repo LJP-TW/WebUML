@@ -1,7 +1,10 @@
 # WebUML
-基於 mxGraph 所開發的 Web-based UML editor
+基於 mxGraph (v3.6.0)與 React.js 所開發的 Web-based UML editor
 
-## 建置與 mxgraph v3.6.0 相容的環境
+## Screenshot
+![](https://i.imgur.com/bytne1i.png)
+
+## 下載套件
 ```
 npm install
 ```
