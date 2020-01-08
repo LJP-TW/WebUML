@@ -3,14 +3,10 @@ import {
 	mxCell,
 	mxPoint,
 	mxUtils,
-	mxXmlCanvas2D,
-	mxImageExport,
-	mxXmlRequest,
 	mxCodec
 } from "mxgraph-js";
 import html2canvas from 'html2canvas';
 import 'js-file-download';
-
 
 export default function setToolbar(graph, setBtns) {
 	// Adds zoom buttons in top, left corner
@@ -57,7 +53,6 @@ export default function setToolbar(graph, setBtns) {
 		while (elt != null) {
 			var a = codec.decodeCell(elt);
 			cells.push(a);
-			console.log(a);
 			elt = elt.nextSibling;
 		}
 		graph.addCells(cells);

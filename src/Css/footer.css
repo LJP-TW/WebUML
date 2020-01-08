@@ -1,0 +1,50 @@
+/* Reference from https://codepen.io/alexandredees/pen/ojaFr */
+/* The Magic Float Center Code */
+.float_center {
+    float: right;
+    
+    /* position: relative; */
+    left: 50%; /* or right 50% */
+    text-align: left;
+
+    position: fixed;
+    /*
+    bottom: 0;
+    text-align: center;
+    right: 20%;
+    left: 20%;
+    width: 60%;
+    */
+}
+.float_center > ul {
+    position: relative;
+    left: -50%;
+    list-style-type: none;
+}
+.float_center > ul > li{
+    float: left;
+    list-style-type: none;
+}
+.umlObj {
+    overflow: hidden;
+    width: 3vw;
+    height: 3vw;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    -webkit-box-reflect: below 2px
+        -webkit-gradient(linear, left top, left bottom, from(transparent),
+        color-stop(0.7, transparent), to(rgba(255,255,255,.5)));
+    -webkit-transition: all 0.3s;
+    -webkit-transform-origin: 50% 100%;
+}
+.BigUMLObj {
+    -webkit-transition: all 0.3s;
+    -webkit-transform: scale(2);
+    margin: 0 2em;
+}
+.MiddleUMLObj {
+    -webkit-transition: all 0.3s;
+    -webkit-transform: scale(1.5);
+    margin: 0 1.5em;
+}
