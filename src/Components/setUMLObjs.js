@@ -7,6 +7,8 @@ import {
 } from "mxgraph-js";
 
 export default function setUMLObjs(graph, objLists) {
+	var idx = 0;
+
 	const setObj = function (umlObjImgClass, width, height, value) {
 		// 判斷 Drop 是否有效
 		const dropGraph = function (evt) {
@@ -24,9 +26,39 @@ export default function setUMLObjs(graph, objLists) {
 		const objectLists = document.getElementById(objLists);
 
 		var li = document.createElement("li");
-		var img = document.createElement("img");
+		var img = document.createElement("div");
 		img.classList.add("umlObj");
 		img.classList.add(umlObjImgClass);
+
+		li.id = "UMLObj_" + idx;
+		idx += 1;
+		// mouseover 時變大, 效果像是 Mac Dock
+		li.addEventListener("mouseover", function(evt) {
+			var childImg = this.firstElementChild;
+			childImg.classList.add("BigUMLObj");
+			var i = parseInt(this.id.split("_")[1]);
+			if (i !== 0) {
+				var preImg = document.getElementById("UMLObj_" + (i - 1)).firstElementChild;
+				preImg.classList.add("MiddleUMLObj");
+			}
+			if (i !== (idx - 1)) {
+				var postImg = document.getElementById("UMLObj_" + (i + 1)).firstElementChild;
+				postImg.classList.add("MiddleUMLObj");
+			}
+		}, false)
+		li.addEventListener("mouseout", function(evt) {
+			var childImg = this.firstElementChild;
+			childImg.classList.remove("BigUMLObj");
+			var i = parseInt(this.id.split("_")[1]);
+			if (i !== 0) {
+				var preImg = document.getElementById("UMLObj_" + (i - 1)).firstElementChild;
+				preImg.classList.remove("MiddleUMLObj");
+			}
+			if (i !== (idx - 1)) {
+				var postImg = document.getElementById("UMLObj_" + (i + 1)).firstElementChild;
+				postImg.classList.remove("MiddleUMLObj");
+			}
+		}, false)
 
 		li.appendChild(img);
 		objectLists.appendChild(li);

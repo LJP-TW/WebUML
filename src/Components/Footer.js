@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import setUMLObjs from "./setUMLObjs";
-import "../Css/dock.css"
+import "../Css/footer.css"
+
 export default function Footer(props) {
 	const objLists = "objectLists";
 
@@ -15,10 +16,8 @@ export default function Footer(props) {
 
 	return (
 		<div id={props.id}>
-			<div id="dock-container">
-					<div class="float_center">
-						<ul id={objLists}></ul>
-					</div>
+			<div class="float_center">
+				<ul id={objLists}></ul>
 			</div>
 		</div>
 	);

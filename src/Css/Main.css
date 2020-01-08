@@ -42,7 +42,6 @@ label {
     background: url('../images/grid.gif');
     cursor: default;
 }
-
 /* #attributeEditor {
     position: absolute;
     float: left;
@@ -53,7 +52,6 @@ label {
     background-color: #eeeeee;
     cursor: default;   
 } */
-
 #objectSelector {
     position: relative;
     overflow: hidden;
@@ -63,31 +61,6 @@ label {
     /* border-top: groove; */
     /* border-width: thin; */
     cursor: default;
-}
-/* Reference from https://codepen.io/alexandredees/pen/ojaFr */
-/* The Magic Float Center Code */
-.float_center {
-    float: right;
-    
-    position: relative;
-    left: -50%; /* or right 50% */
-    text-align: left;
-}
-.float_center > ul {
-    position: relative;
-    left: 50%;
-    list-style-type: none;
-}
-.float_center > ul > li{
-    float: left;
-    list-style-type: none;
-}
-body .umlObj {
-    overflow: hidden;
-    width: 3vw;
-    height: 3vw;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 .sidetool {
     position: relative;
