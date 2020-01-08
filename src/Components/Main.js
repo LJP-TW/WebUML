@@ -86,7 +86,6 @@ export default function Main(props) {
 			<Header id="header" graph={graph} parentCall={callHeader} />
 			<Toolbar id="toolbar" graph={graph} parentCall={callToolbar} />
 			<App id="canvas" setGraph={setGraph} />
-
 			<div id="menuToggle">
 				<input id="attrTriger" type="checkbox" />
 				<span></span>
@@ -96,7 +95,6 @@ export default function Main(props) {
                 <ul id="menu">
                 <AttributeEditor id="attributeEditor" graph={graph} parentCall={callAttributeEditor} />
                 </ul>
-			    
 			</div>
 			<Footer id="objectSelector" graph={graph} parentCall={callFooter} />
 		</div>
